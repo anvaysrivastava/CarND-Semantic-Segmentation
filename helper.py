@@ -102,7 +102,7 @@ def gen_batch_function(data_folder, image_shape):
                 gt_images.append(scipy.ndimage.interpolation.rotate(gt_image, random.uniform(-max_angle, max_angle)))
                 # shift
                 images.append(scipy.ndimage.interpolation.shift(image, random.uniform(-1, 1)))
-                gt_images.append(scipy.ndimage.interpolation.shift(gt_image, random.uniform(-1, 1)))		
+                gt_images.append(scipy.ndimage.interpolation.shift(gt_image, random.uniform(-1, 1)))
             yield np.array(images), np.array(gt_images)
     return get_batches_fn
 
